@@ -5,10 +5,13 @@ import Navbar from "./components/Navbar"
 
 function App() {
   const [registerFamily, setRegisterFamily] = useState(false)
+  const handleRegisterFamily = () => {
+    setRegisterFamily(prev => !prev)
+  }
   
   return (
     <>
-     <Navbar registerFamily={registerFamily}/>
+     <Navbar registerFamily={registerFamily} handleRegister={handleRegisterFamily}/>
      <Family />
      <Member />
     </>
