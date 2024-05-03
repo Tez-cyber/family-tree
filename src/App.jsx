@@ -1,4 +1,5 @@
 import Family from "./components/Family"
+import Member from "./components/Member"
 import Navbar from "./components/Navbar"
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <>
      <Navbar />
      <Family />
+     <Member />
     </>
   )
 }

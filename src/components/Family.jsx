@@ -3,7 +3,7 @@ import React from 'react'
 const Family = () => {
     return (
         <div className='w-[300px] mx-auto'>
-            <form action="" className=' flex flex-col gap-4 bg-slate-3500 mt-12 px-5 py-10'>
+            <form action="" className=' flex flex-col gap-4 bg-slate-300 mt-12 px-5 py-10'>
                 <div>
                     <p className='font-medium text-[14px]'>Name :</p>
                     <input type="text" className='border border-black rounded w-full py-1 px-3 outline-none' />
