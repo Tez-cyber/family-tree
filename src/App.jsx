@@ -17,7 +17,7 @@ function App() {
   
   return (
     <>
-     <Navbar registerFamily={registerFamily} handleRegister={handleRegisterFamily}/>
+     <Navbar registerFamily={registerFamily} handleRegisterFamily={handleRegisterFamily} handleRegisterMember={handleRegisterMember}/>
      {registerFamily && <Family />}
      {registerMember && <Member />}
     </>
