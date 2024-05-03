@@ -12,7 +12,7 @@ function App() {
   return (
     <>
      <Navbar registerFamily={registerFamily} handleRegister={handleRegisterFamily}/>
-     <Family />
+     {registerFamily && <Family />}
      <Member />
     </>
   )
