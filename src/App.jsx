@@ -8,6 +8,12 @@ function App() {
   const handleRegisterFamily = () => {
     setRegisterFamily(prev => !prev)
   }
+
+  const [registerMember, setRegisterMember] = useState(false)
+  const handleRegisterMember = () => {
+    setRegisterMember(prev => !prev)
+  }
+
   
   return (
     <>
