@@ -1,12 +1,11 @@
-import { useState } from "react"
-import data from './data.json'
+import Navbar from "./components/Navbar"
+
 
 function App() {
   
   return (
     <>
-     
-    
+     <Navbar />
     </>
   )
 }
