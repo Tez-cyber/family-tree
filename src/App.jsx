@@ -12,6 +12,14 @@ function App() {
   
 
   //Fetch families from server
+  useEffect(() => {
+    const getFamilies = async () => {
+      const famServer = await fetchFamilies()
+      setFamilies(famServer)
+    }
+    getFamilies()
+  }, [families])
+  
   const fetchFamilies = async () => {
     const res = await fetch('http://localhost:5000/families')
     const data = await res.json()
@@ -32,13 +40,7 @@ function App() {
     if (registerFamily) setRegisterFamily(!registerFamily)
   }
 
-  useEffect(() => {
-    const getFamilies = async () => {
-      const famServer = await fetchFamilies()
-      setFamilies(famServer)
-    }
-    getFamilies()
-  }, [families])
+  
 
   //Add family name
   const addFamily = async (family) => {
