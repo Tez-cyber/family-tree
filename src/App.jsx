@@ -9,8 +9,20 @@ function App() {
   const [families, setFamilies] = useState([])
 
   useEffect(() => {
-    console.log(families)
-  }, [families])
+    const getFamilies = async () => {
+      const famServer = await fetchFamilies()
+      setFamilies(famServer)
+    }
+    getFamilies()
+  }, [])
+
+  //Fetch families from server
+  const fetchFamilies = async () => {
+    const res = await fetch('http://localhost:5000/families')
+    const data = await res.json()
+    return data
+  }
+
   const [registerFamily, setRegisterFamily] = useState(false)
   const handleRegisterFamily = () => {
     setRegisterFamily(prev => !prev)
@@ -26,7 +38,7 @@ function App() {
 
   const addFamily = (family) => {
     const id = Math.floor(Math.random() * 100000) + 'aebghj67'
-    const newFamily = {id, ...family}
+    const newFamily = { id, ...family }
     localStorage.setItem('families', JSON.stringify(setFamilies([...families, newFamily])))
 
     console.log(families)
@@ -36,7 +48,7 @@ function App() {
   return (
     <>
       <Navbar registerFamily={registerFamily} handleRegisterFamily={handleRegisterFamily} handleRegisterMember={handleRegisterMember} />
-      {registerFamily && <Family  addFam={addFamily}  />}
+      {registerFamily && <Family addFam={addFamily} />}
       {registerMember && <Member />}
       <Families families={families} />
     </>
