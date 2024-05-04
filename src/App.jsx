@@ -56,7 +56,7 @@ function App() {
       <Navbar registerFamily={registerFamily} handleRegisterFamily={handleRegisterFamily} handleRegisterMember={handleRegisterMember} />
       {registerFamily && <Family />}
       {registerMember && <Member />}
-      <Families />
+      <Families families={families} />
     </>
   )
 }
