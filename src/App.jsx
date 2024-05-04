@@ -5,6 +5,38 @@ import Navbar from "./components/Navbar"
 import Families from "./components/Families"
 
 function App() {
+  const [families, setFamilies] = useState([
+    {
+      id: 1,
+      lastname: "Salami",
+      origin: "Nigeria",
+      members: []
+    },
+    {
+      id: 2,
+      lastname: "Abdullah",
+      origin: "Saudi",
+      members: []
+    },
+    {
+      id: 3,
+      lastname: "Vladimir",
+      origin: "Russia",
+      members: []
+    },
+    {
+      id: 4,
+      lastname: "Danya",
+      origin: "Ghana",
+      members: []
+    },
+    {
+      id: 5,
+      lastname: "Haruno",
+      origin: "Japan",
+      members: []
+    },
+  ])
   const [registerFamily, setRegisterFamily] = useState(false)
   const handleRegisterFamily = () => {
     setRegisterFamily(prev => !prev)
@@ -17,50 +49,22 @@ function App() {
     if (registerFamily) setRegisterFamily(!registerFamily)
   }
 
-  const families = [
-    {
-      id: 1,
-      name: "Salami",
-      origin: "Nigeria",
-      members: []
-    },
-    {
-      id: 2,
-      name: "Abdullah",
-      origin: "Saudi",
-      members: []
-    },
-    {
-      id: 3,
-      name: "Vladimir",
-      origin: "Russia",
-      members: []
-    },
-    {
-      id: 4,
-      name: "Danya",
-      origin: "Ghana",
-      members: []
-    },
-    {
-      id: 5,
-      name: "Haruno",
-      origin: "Japan",
-      members: []
-    },
-  ]
 
-  const addFamily = () => {
+  const addFamily = (family) => {
+    const id = Math.floor(Math.random() * 100000) + 'aebghj67'
+    const newFamily = {id, ...family}
+    setFamilies([...families, newFamily])
 
+    console.log(families)
   }
 
 
   return (
     <>
       <Navbar registerFamily={registerFamily} handleRegisterFamily={handleRegisterFamily} handleRegisterMember={handleRegisterMember} />
-      {registerFamily && <Family />}
+      {registerFamily && <Family  addFam={addFamily}  />}
       {registerMember && <Member />}
-      <Families families={families}  addFam={addFamily} />
+      <Families families={families} />
     </>
   )
 }

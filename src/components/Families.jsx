@@ -6,7 +6,7 @@ const Families = ({families}) => {
       {
         families.map(fam => (
           <div className="flex gap-3" key={fam.id}>
-            <p>{fam.name}</p>
+            <p>{fam.lastname}</p>
             <p>{fam.origin}</p>
           </div>
         ))
