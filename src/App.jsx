@@ -3,6 +3,7 @@ import Family from "./components/registerFamily"
 import Member from "./components/registerMember"
 import Navbar from "./components/Navbar"
 import Families from "./components/Families"
+import { useEffect } from "react"
 
 function App() {
   const [families, setFamilies] = useState([
@@ -37,6 +38,10 @@ function App() {
       members: []
     },
   ])
+
+  useEffect(() => {
+    console.log(families)
+  }, [families])
   const [registerFamily, setRegisterFamily] = useState(false)
   const handleRegisterFamily = () => {
     setRegisterFamily(prev => !prev)
@@ -53,7 +58,7 @@ function App() {
   const addFamily = (family) => {
     const id = Math.floor(Math.random() * 100000) + 'aebghj67'
     const newFamily = {id, ...family}
-    setFamilies([...families, newFamily])
+    localStorage.setItem('families', JSON.stringify(setFamilies([...families, newFamily])))
 
     console.log(families)
   }
