@@ -4,8 +4,8 @@ const Families = ({families}) => {
   return (
     <div>
       {
-        families.map(fam => (
-          <div className="flex gap-3" key={fam.id}>
+        families.map((fam, i) => (
+          <div className="flex gap-3" key={i}>
             <p>{fam.lastname}</p>
             <p>{fam.origin}</p>
           </div>

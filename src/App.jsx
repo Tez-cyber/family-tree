@@ -9,13 +9,7 @@ function App() {
   //Family state
   const [families, setFamilies] = useState([])
 
-  useEffect(() => {
-    const getFamilies = async () => {
-      const famServer = await fetchFamilies()
-      setFamilies(famServer)
-    }
-    getFamilies()
-  }, [])
+  
 
   //Fetch families from server
   const fetchFamilies = async () => {
@@ -38,11 +32,28 @@ function App() {
     if (registerFamily) setRegisterFamily(!registerFamily)
   }
 
+  useEffect(() => {
+    const getFamilies = async () => {
+      const famServer = await fetchFamilies()
+      setFamilies(famServer)
+    }
+    getFamilies()
+  }, [families])
+
   //Add family name
-  const addFamily = (family) => {
-    const id = Math.floor(Math.random() * 100000) + 'aebghj67'
-    const newFamily = { id, ...family }
-    localStorage.setItem('families', JSON.stringify(setFamilies([...families, newFamily])))
+  const addFamily = async (family) => {
+    // const id = Math.floor(Math.random() * 100000) + 'aebghj67'
+    const res = await fetch('http://localhost:5000/families', {
+      method: "POST",
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(family)
+    })
+
+    const data = res.json()
+    setFamilies([...families, data])
+      
 
     console.log(families)
   }
