@@ -6,6 +6,7 @@ import Families from "./components/Families"
 import { useEffect } from "react"
 
 function App() {
+  //Family state
   const [families, setFamilies] = useState([])
 
   useEffect(() => {
@@ -23,19 +24,21 @@ function App() {
     return data
   }
 
+  //register Family state
   const [registerFamily, setRegisterFamily] = useState(false)
   const handleRegisterFamily = () => {
     setRegisterFamily(prev => !prev)
     if (registerMember) setRegisterMember(!registerMember)
   }
 
+  //register member state
   const [registerMember, setRegisterMember] = useState(false)
   const handleRegisterMember = () => {
     setRegisterMember(prev => !prev)
     if (registerFamily) setRegisterFamily(!registerFamily)
   }
 
-
+  //Add family name
   const addFamily = (family) => {
     const id = Math.floor(Math.random() * 100000) + 'aebghj67'
     const newFamily = { id, ...family }
