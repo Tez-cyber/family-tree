@@ -2,6 +2,7 @@ import { useState } from "react"
 import Family from "./components/registerFamily"
 import Member from "./components/registerMember"
 import Navbar from "./components/Navbar"
+import Families from "./components/Families"
 
 function App() {
   const [registerFamily, setRegisterFamily] = useState(false)
@@ -55,14 +56,7 @@ function App() {
       <Navbar registerFamily={registerFamily} handleRegisterFamily={handleRegisterFamily} handleRegisterMember={handleRegisterMember} />
       {registerFamily && <Family />}
       {registerMember && <Member />}
-      {
-        families.map(fam => (
-          <div className="flex gap-3" key={fam.id}>
-            <p>{fam.name}</p>
-            <p>{fam.origin}</p>
-          </div>
-        ))
-      }
+      <Families />
     </>
   )
 }
