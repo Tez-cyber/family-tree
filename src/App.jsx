@@ -6,38 +6,7 @@ import Families from "./components/Families"
 import { useEffect } from "react"
 
 function App() {
-  const [families, setFamilies] = useState([
-    {
-      id: 1,
-      lastname: "Salami",
-      origin: "Nigeria",
-      members: []
-    },
-    {
-      id: 2,
-      lastname: "Abdullah",
-      origin: "Saudi",
-      members: []
-    },
-    {
-      id: 3,
-      lastname: "Vladimir",
-      origin: "Russia",
-      members: []
-    },
-    {
-      id: 4,
-      lastname: "Danya",
-      origin: "Ghana",
-      members: []
-    },
-    {
-      id: 5,
-      lastname: "Haruno",
-      origin: "Japan",
-      members: []
-    },
-  ])
+  const [families, setFamilies] = useState([])
 
   useEffect(() => {
     console.log(families)
