@@ -8,9 +8,8 @@ import { useEffect } from "react"
 function App() {
   //Family state
   const [families, setFamilies] = useState([])
-  const [members, setMembers] = uiseState([])
+  const [members, setMembers] = useState([])
 
-  
 
   //Fetch families from server
   useEffect(() => {
@@ -19,12 +18,16 @@ function App() {
       setFamilies(famServer)
     }
     getFamilies()
+  }, [families])
+
+  useEffect(() => {
     const getMembers = async () => {
-      const famServer = await fetchFamilies()
-      setFamilies(famServer)
+      const memberServer = await fetchMembers()
+      setMembers(memberServer)
     }
     getMembers()
-  }, [families, ])
+  }, [members])
+
 
   const fetchFamilies = async () => {
     const res = await fetch('http://localhost:5000/families')
@@ -53,7 +56,7 @@ function App() {
     if (registerFamily) setRegisterFamily(!registerFamily)
   }
 
-  
+
 
   //Add family name
   const addFamily = async (family) => {
@@ -66,22 +69,19 @@ function App() {
       body: JSON.stringify(family)
     })
 
-    const members = {}
+
     const data = res.json()
     setFamilies([...families, data])
 
-      
-
-    console.log(members)
   }
 
 
   return (
     <>
-      {registerFamily && <Family addFam={addFamily} registerFam={handleRegisterFamily}  />}
+      {registerFamily && <Family addFam={addFamily} registerFam={handleRegisterFamily} />}
       <Navbar registerFamily={registerFamily} handleRegisterFamily={handleRegisterFamily} handleRegisterMember={handleRegisterMember} />
       {registerMember && <Member />}
-      <Families families={families} />
+      <Families families={families} members={members} />
     </>
   )
 }
