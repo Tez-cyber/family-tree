@@ -55,11 +55,13 @@ function App() {
       body: JSON.stringify(family)
     })
 
+    const members = {}
     const data = res.json()
     setFamilies([...families, data])
+
       
 
-    console.log(families)
+    console.log(members)
   }
 
 

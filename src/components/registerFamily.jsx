@@ -21,8 +21,8 @@ const Family = ({ addFam, registerFam }) => {
 
     }
     return (
-        <div className="absolute top-0 h-full w-full bg-[#00000099] backdrop-blur-md">
-            <div className='w-[300px] mx-auto my-10'>
+        <div className="absolute top-0 h-screen w-full bg-[#00000099] backdrop-blur-md overflow-hidden">
+            <div className=' mx-auto my-10 md:w-[300px]'>
                 <form action="" className='relative flex flex-col gap-4 bg-slate-300 mt-12 px-5 py-20' onSubmit={handleSubmit}>
                     <button className='absolute top-0 right-3' onClick={registerFam} >close</button>
                     <div>
