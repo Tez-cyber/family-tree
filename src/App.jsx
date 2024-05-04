@@ -19,7 +19,7 @@ function App() {
     }
     getFamilies()
   }, [families])
-  
+
   const fetchFamilies = async () => {
     const res = await fetch('http://localhost:5000/families')
     const data = await res.json()
@@ -31,7 +31,9 @@ function App() {
   const handleRegisterFamily = () => {
     setRegisterFamily(prev => !prev)
     if (registerMember) setRegisterMember(!registerMember)
+    console.log(registerFamily)
   }
+
 
   //register member state
   const [registerMember, setRegisterMember] = useState(false)
@@ -63,8 +65,8 @@ function App() {
 
   return (
     <>
+      {registerFamily && <Family addFam={addFamily} registerFam={handleRegisterFamily} />}
       <Navbar registerFamily={registerFamily} handleRegisterFamily={handleRegisterFamily} handleRegisterMember={handleRegisterMember} />
-      {registerFamily && <Family addFam={addFamily} />}
       {registerMember && <Member />}
       <Families families={families} />
     </>
