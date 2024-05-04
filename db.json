@@ -3,8 +3,7 @@
     {
       "id": 1,
       "lastname": "Salami",
-      "origin": "Nigeria",
-      "members": []
+      "origin": "Nigeria"
     },
     {
       "id": 2,
@@ -17,26 +16,40 @@
       "lastname": "Vladimir",
       "origin": "Russia",
       "members": []
-    },
-    {
-      "id": "6b04",
-      "lastname": "name",
-      "origin": "origin"
-    },
-    {
-      "id": "5917",
-      "lastname": "aaaa",
-      "origin": "sss"
-    },
-    {
-      "id": "2383",
-      "lastname": "aa",
-      "origin": "aaa"
-    },
-    {
-      "id": "afcf",
-      "lastname": "ssss",
-      "origin": "ssss"
     }
+  ],
+  "members" : [
+        {   
+            "lastname": "Salami",
+            "name": "Drex",
+            "relation": "Father",
+            "dob": "10-04-1956",
+            "status": "Alive",
+            "contact": ""
+        },
+        {
+            "lastname": "Vladimir",
+            "name": "Hannah",
+            "relation": "Mother",
+            "dob": "10-04-1979",
+            "status": "Alive",
+            "contact": ""
+        },
+        {
+            "lastname": "Abdullah",
+            "name": "Joe",
+            "relation":  "Brother",
+            "dob": "07-01-2000",
+            "status": "Alive",
+            "contact": ""
+        },
+        {   
+            "lastname": "Salami",
+            "name": "Lily",
+            "relation":  "Sisterr",
+            "dob": "07-01-2000",
+            "status": "Alive",
+            "contact": ""
+        }
   ]
 }

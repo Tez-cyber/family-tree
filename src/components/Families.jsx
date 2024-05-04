@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Families = ({ families }) => {
+    // families.map(memb => console.log(memb.members))
     return (
         <div>
             {
@@ -18,7 +19,13 @@ const Families = ({ families }) => {
                             <button className='bg-black text-white p-2 hover:bg-inherit hover:text-black hover:border hover:border-black hover:rounded-lg'>
                                 See members
                             </button>
+                            {Object.keys(fam.members)}
                         </div>
+                        {/* {
+                            fam.members.map((member) => (
+                                <div>{member.name}</div>
+                            ))
+                        } */}
                     </div>
                 ))
             }

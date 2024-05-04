@@ -8,6 +8,7 @@ import { useEffect } from "react"
 function App() {
   //Family state
   const [families, setFamilies] = useState([])
+  const [members, setMembers] = uiseState([])
 
   
 
@@ -18,10 +19,20 @@ function App() {
       setFamilies(famServer)
     }
     getFamilies()
-  }, [families])
+    const getMembers = async () => {
+      const famServer = await fetchFamilies()
+      setFamilies(famServer)
+    }
+    getMembers()
+  }, [families, ])
 
   const fetchFamilies = async () => {
     const res = await fetch('http://localhost:5000/families')
+    const data = await res.json()
+    return data
+  }
+  const fetchMembers = async () => {
+    const res = await fetch('http://localhost:5000/members')
     const data = await res.json()
     return data
   }
