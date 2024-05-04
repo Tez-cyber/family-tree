@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 const Family = () => {
     const [lastname, setLastName] = useState('')
     const [origin, setOrigin] = useState('')
+    const [err, setErr] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
