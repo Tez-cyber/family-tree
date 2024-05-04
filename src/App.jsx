@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Family from "./components/registerFamily"
-import Member from "./components/Member"
+import Member from "./components/registerMember"
 import Navbar from "./components/Navbar"
 
 function App() {
