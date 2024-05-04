@@ -50,13 +50,17 @@ function App() {
     },
   ]
 
+  const addFamily = () => {
+
+  }
+
 
   return (
     <>
       <Navbar registerFamily={registerFamily} handleRegisterFamily={handleRegisterFamily} handleRegisterMember={handleRegisterMember} />
       {registerFamily && <Family />}
       {registerMember && <Member />}
-      <Families families={families} />
+      <Families families={families}  addFam={addFamily} />
     </>
   )
 }

@@ -8,7 +8,12 @@ const Family = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        // if(!lastname)
+        if(!lastname) setErr('Please enter a lastname')
+        addFam({ lastname, origin })
+
+        setOrigin('')
+        setErr('')
+
     }
     return (
         <div className='w-[300px] mx-auto'>
@@ -20,6 +25,9 @@ const Family = () => {
                 <div>
                     <p className='font-medium text-[14px]'>Nationality: </p>
                     <input type="text" value={origin} na className='border border-black rounded w-full py-1 px-3 outline-none' />
+                </div>
+                <div>
+                    <p className="text-red-700">{err}</p>
                 </div>
                 <button className='bg-black text-white w-1/2 mx-auto rounded py-2'>
                     Submit
